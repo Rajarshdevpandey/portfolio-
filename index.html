@@ -1,0 +1,728 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajarshdev Pandey | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #030712;
+            color: #f3f4f6;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Neon Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 999px;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #2563eb;
+            text-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem;
+        }
+
+        .hero-row {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #60a5fa;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(to right, #2563eb, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(37, 99, 235, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+        }
+
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #2563eb;
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* Sections General */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title span {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            border-color: rgba(37, 99, 235, 0.5);
+            background: rgba(37, 99, 235, 0.03);
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #e5e7eb;
+        }
+
+        .skill-status {
+            font-size: 0.8rem;
+            color: #a855f7;
+            background: rgba(168, 85, 247, 0.1);
+            padding: 0.1rem 0.5rem;
+            border-radius: 999px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(to right, #2563eb, #a855f7);
+            border-radius: 999px;
+        }
+
+        /* Cards Grid Layout */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(168, 85, 247, 0.02);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            color: #60a5fa;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .card-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .card-link:hover {
+            color: #60a5fa;
+        }
+
+        /* Education Timeline */
+        .edu-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .edu-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-2rem - 7px);
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2563eb;
+            box-shadow: 0 0 10px #2563eb;
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: #60a5fa;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-title {
+            font-size: 1.25rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .edu-sub {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            color: #9ca3af;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+
+        .social-link:hover {
+            color: #2563eb;
+            border-color: #2563eb;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: white;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #2563eb;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            color: white;
+            border: none;
+            padding: 0.85rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s, transform 0.2s;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #4b5563;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-row {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                margin: 0 auto 2rem auto;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            nav ul {
+                display: none;
+            }
+            .image-wrapper {
+                width: 260px;
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Rajarshdev<span>.dev</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <a href="https://wa.me/9453110907" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+
+    <section class="hero" id="about">
+        <div class="hero-row">
+            <div class="hero-content">
+                <span class="badge">Future Software Developer</span>
+                <h1>Hi, I'm <br><span>Rajarshdev Pandey</span></h1>
+                <p>B.Tech CSE Student & Aspiring Full Stack Developer. Currently entering my 2nd Year (Graduation 2029). Focused on algorithmic engineering, system architectures, and high-quality product deployments.</p>
+                <div class="btn-group">
+                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="btn btn-primary">GitHub</a>
+                    <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                    <a href="https://wa.me/9453110907" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="image-wrapper">
+                    <img src="1000099385.webp" alt="Rajarshdev Pandey">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-info"><span class="skill-name">C Language</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-info"><span class="skill-name">Java</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-info"><span class="skill-name">Python</span><span class="skill-status">Learning</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 55%;"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-info"><span class="skill-name">Frontend (HTML, CSS, JS)</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-info"><span class="skill-name">Full Stack Architecture</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2 class="section-title">Certificates & <span>Experience</span></h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div>
+                    <div class="card-icon">🚀</div>
+                    <h3>NPCI 60 Days POTD Challenge</h3>
+                    <p>Successfully completed 60 consecutive days of Problem of the Day challenge, refining logical capabilities and deep problem-solving data architectures.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">🤝</div>
+                    <h3>GeeksforGeeks Volunteer</h3>
+                    <p>Contributed actively as a technical volunteer assisting peers, coordinating community coding roadmaps, and cultivating documentation workflows.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">💼</div>
+                    <h3>Thiranex Internship</h3>
+                    <p>Worked as a technical development intern, collaborating on production sprints, modern code paradigms, and feature deployment models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div>
+                    <div class="card-icon">📝</div>
+                    <h3>AI Notes Generator</h3>
+                    <p>An production-grade web intelligence engine helping students optimize context mapping, generate automated structured notes, and build systematic study pipelines.</p>
+                </div>
+                <div class="card-links">
+                    <a href="https://rajarshdevpandey.github.io/notes/" target="_blank" class="card-link">Live Project Link</a>
+                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="card-link">GitHub Code</a>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="card-icon">🛒</div>
+                    <h3>E-Commerce Frontend Website</h3>
+                    <p>A pristine product catalog interface engineered with dynamic component controls, precise rendering grids, and responsive cross-device layouts.</p>
+                </div>
+                <div class="card-links">
+                    <a href="https://www.linkedin.com/posts/himanshi-adhikari-b36234359_webdevelopment-ecommercewebsite-frontenddevelopment-ugcPost-7470357084295962625-4S6z/" target="_blank" class="card-link">LinkedIn Showreel</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">My <span>Education</span></h2>
+        <div class="edu-timeline">
+            <div class="edu-item">
+                <div class="edu-date">2025 - 2029</div>
+                <div class="edu-title">B.Tech in Computer Science Engineering (Entering 2nd Year)</div>
+                <div class="edu-sub">Undergraduate Engineering Architecture</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-date">Completed</div>
+                <div class="edu-title">Higher Secondary Education (CBSE)</div>
+                <div class="edu-sub">PCM Stream (Physics, Chemistry, Mathematics)</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <div class="contact-form-container">
+            <div class="social-row">
+                <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" class="social-link">GeeksforGeeks</a>
+                <a href="https://www.instagram.com/dev__pandey_07?igsh=MWFxa2Zyemx0MnNkbQ==" target="_blank" class="social-link">Instagram</a>
+                <a href="mailto:prajarshdev@gmail.com" class="social-link">prajarshdev@gmail.com</a>
+            </div>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" name="_replyto" id="email" class="form-control" placeholder="Enter your email" value="prajarshdev@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" class="form-control" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rajarshdev Pandey | Future Software Developer</p>
+    </footer>
+
+</body>
+</html>
+
+```
