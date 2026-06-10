@@ -14,40 +14,40 @@
         }
 
         body {
-            background: radial-gradient(circle at 50% 50%, #0b0f19 0%, #030712 100%);
+            background: radial-gradient(circle at 50% 50%, #0d1527 0%, #030712 100%);
             color: #f3f4f6;
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: none; /* Custom premium cursor layout activation */
+            cursor: none; /* Premium Custom Cursor Path Enabled */
         }
 
-        /* Custom Glowing Tech Cursor Aura */
+        /* Cyber Neon Cursor Aura */
         #custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #3b82f6;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #00f0ff;
             border-radius: 50%;
             position: fixed;
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 99999;
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+            transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
         }
 
         #custom-cursor-dot {
             width: 6px;
             height: 6px;
-            background-color: #a855f7;
+            background-color: #ff007f;
             border-radius: 50%;
             position: fixed;
             transform: translate(-50%, -50%);
             pointer-events: none;
             z-index: 99999;
-            box-shadow: 0 0 10px #a855f7;
+            box-shadow: 0 0 10px #ff007f;
         }
 
-        /* Neon Scrollbar */
+        /* Neon Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -55,20 +55,20 @@
             background: #030712;
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(#3b82f6, #a855f7);
+            background: linear-gradient(#00f0ff, #ff007f);
             border-radius: 999px;
         }
 
-        /* Header / Navbar */
+        /* Header Navbar Matrix */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(3, 7, 18, 0.7);
+            background: rgba(3, 7, 18, 0.75);
             backdrop-filter: blur(16px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
         }
 
         .nav-container {
@@ -86,12 +86,11 @@
             color: #fff;
             text-decoration: none;
             letter-spacing: -0.5px;
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
         }
 
         .logo span {
-            color: #3b82f6;
-            background: linear-gradient(to right, #3b82f6, #a855f7);
+            background: linear-gradient(to right, #00f0ff, #ff007f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -111,11 +110,11 @@
         }
 
         nav ul li a:hover {
-            color: #fff;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
         }
 
-        /* Hero Section Layout */
+        /* Hero Layout Area */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -139,17 +138,17 @@
 
         .badge {
             display: inline-block;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            color: #60a5fa;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 7f, 0.1));
+            border: 1px solid rgba(0, 240, 255, 0.4);
+            color: #00f0ff;
             padding: 0.5rem 1.2rem;
             border-radius: 9999px;
             font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .hero-content h1 {
@@ -162,9 +161,10 @@
         }
 
         .hero-content h1 span {
-            background: linear-gradient(to right, #3b82f6 30%, #a855f7 100%);
+            background: linear-gradient(to right, #00f0ff 20%, #ff007f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
         }
 
         .hero-content p {
@@ -193,28 +193,29 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #3b82f6, #7c3aed);
+            background: linear-gradient(135deg, #00f0ff, #7c3aed);
             color: white;
             border: none;
-            box-shadow: 0 4px 25px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 4px 25px rgba(0, 240, 255, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.7);
         }
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.03);
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.3);
             backdrop-filter: blur(8px);
         }
 
         .btn-secondary:hover {
-            background: rgba(59, 130, 246, 0.05);
-            border-color: #3b82f6;
+            background: rgba(0, 240, 255, 0.1);
+            border-color: #00f0ff;
             transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
         }
 
         .hero-image-container {
@@ -223,15 +224,15 @@
             justify-content: center;
         }
 
-        /* Advanced Premium Curvature Card Mask */
+        /* Custom Cyber Edge Image Curved Card Frame */
         .image-wrapper {
             position: relative;
-            width: 330px;
-            height: 420px;
+            width: 320px;
+            height: 410px;
             border-radius: 24px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.15);
+            border: 2px solid #00f0ff;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.35);
             background: #111827;
         }
 
@@ -239,7 +240,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, transparent 60%, rgba(3, 7, 18, 0.8) 100%);
+            background: linear-gradient(to bottom, transparent 65%, rgba(3, 7, 18, 0.9) 100%);
             z-index: 2;
         }
 
@@ -248,14 +249,14 @@
             height: 100%;
             object-fit: cover;
             object-position: center 15%;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .image-wrapper:hover img {
-            transform: scale(1.04);
+            transform: scale(1.06);
         }
 
-        /* Sections Structure */
+        /* Content Modular Layout Configs */
         section {
             padding: 7rem 2rem;
             max-width: 1200px;
@@ -266,45 +267,44 @@
             font-size: 2.6rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 4-rem;
+            margin-bottom: 4rem;
             letter-spacing: -0.5px;
         }
 
         .section-title span {
-            background: linear-gradient(to right, #60a5fa, #c084fc);
+            background: linear-gradient(to right, #00f0ff, #ff007f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
-        /* Skills Section Elements */
+        /* Neon Technical Structural Elements */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
-            margin-top: 3rem;
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(13, 21, 39, 0.4);
+            border: 1px solid rgba(0, 240, 255, 0.15);
             padding: 1.8rem;
             border-radius: 16px;
             backdrop-filter: blur(12px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .skill-card:hover {
-            border-color: rgba(59, 130, 246, 0.4);
-            background: rgba(59, 130, 246, 0.03);
+            border-color: #00f0ff;
+            background: rgba(0, 240, 255, 0.04);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
         }
 
         .skill-info {
@@ -323,11 +323,11 @@
         .skill-status {
             font-size: 0.75rem;
             font-weight: 700;
-            color: #c084fc;
-            background: rgba(168, 85, 247, 0.15);
+            color: #ff007f;
+            background: rgba(255, 0, 127, 0.15);
             padding: 0.2rem 0.6rem;
             border-radius: 999px;
-            border: 1px solid rgba(168, 85, 247, 0.2);
+            border: 1px solid rgba(255, 0, 127, 0.3);
         }
 
         .skill-bar {
@@ -343,21 +343,20 @@
             top: 0;
             left: 0;
             height: 100%;
-            background: linear-gradient(to right, #3b82f6, #a855f7);
+            background: linear-gradient(to right, #00f0ff, #ff007f);
             border-radius: 999px;
         }
 
-        /* General Layout Cards Grid */
+        /* Matrix Cards Engine Configs */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(13, 21, 39, 0.4);
+            border: 1px solid rgba(255, 0, 127, 0.15);
             border-radius: 20px;
             padding: 2.2rem;
             backdrop-filter: blur(12px);
@@ -369,15 +368,16 @@
 
         .card:hover {
             transform: translateY(-6px);
-            border-color: rgba(168, 85, 247, 0.4);
-            background: rgba(168, 85, 247, 0.02);
-            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.08);
+            border-color: #ff007f;
+            background: rgba(255, 0, 127, 0.03);
+            box-shadow: 0 15px 35px rgba(255, 0, 127, 0.2);
         }
 
         .card-icon {
             font-size: 2rem;
-            color: #60a5fa;
+            color: #00f0ff;
             margin-bottom: 1.4rem;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
 
         .card h3 {
@@ -402,13 +402,13 @@
         .card-link {
             font-size: 0.95rem;
             font-weight: 700;
-            color: #3b82f6;
+            color: #00f0ff;
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .card-link:hover {
-            color: #60a5fa;
+            color: #ff007f;
             text-decoration: underline;
         }
 
@@ -417,19 +417,19 @@
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
             max-width: 900px;
-            margin: 3rem auto 0 auto;
+            margin: 0 auto;
         }
 
-        /* Contact Components Layout */
+        /* Contact Systems UI */
         .contact-form-container {
             max-width: 650px;
-            margin: 3rem auto 0 auto;
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 0 auto;
+            background: rgba(13, 21, 39, 0.5);
+            border: 1px solid rgba(0, 240, 255, 0.2);
             padding: 3rem;
             border-radius: 24px;
             backdrop-filter: blur(16px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .social-row {
@@ -447,16 +447,16 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
             padding: 0.65rem 1.4rem;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(168, 85, 247, 0.05));
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 240, 255, 0.2);
             border-radius: 12px;
         }
 
         .social-link:hover {
-            color: #3b82f6;
-            border-color: #3b82f6;
+            color: #00f0ff;
+            border-color: #00f0ff;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
         }
 
         .form-group {
@@ -476,9 +476,9 @@
 
         .form-control:focus {
             outline: none;
-            border-color: #3b82f6;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 15px rgba(3b, 130, 246, 0.25);
+            border-color: #00f0ff;
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
         }
 
         textarea.form-control {
@@ -488,7 +488,7 @@
 
         .btn-submit {
             width: 100%;
-            background: linear-gradient(to right, #3b82f6, #7c3aed);
+            background: linear-gradient(to right, #00f0ff, #7c3aed);
             color: white;
             border: none;
             padding: 1rem;
@@ -497,25 +497,25 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.6);
         }
 
-        /* Floating Absolute WhatsApp Action Grid */
+        /* Cyber Neon Floating WhatsApp Trigger Engine */
         .whatsapp-float {
             position: fixed;
             bottom: 35px;
             right: 35px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
+            background: linear-gradient(135deg, #25d366, #075e54);
             color: #fff;
             border-radius: 50%;
             text-align: center;
             font-size: 32px;
-            box-shadow: 0px 8px 25px rgba(37, 211, 102, 0.4);
+            box-shadow: 0px 8px 25px rgba(37, 211, 102, 0.5);
             z-index: 9999;
             width: 65px;
             height: 65px;
@@ -524,10 +524,12 @@
             justify-content: center;
             text-decoration: none;
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.15) rotate(10deg);
+            transform: scale(1.18) rotate(8deg);
+            box-shadow: 0px 12px 30px rgba(37, 211, 102, 0.7);
         }
 
         footer {
@@ -539,7 +541,7 @@
             margin-top: 5rem;
         }
 
-        /* Responsive Adapters */
+        /* Screen Breakpoints Matrix */
         @media (max-width: 968px) {
             body { cursor: auto; }
             #custom-cursor, #custom-cursor-dot { display: none; }
@@ -576,7 +578,7 @@
         </div>
     </header>
 
-    <a href="https://wa.me/9453110907" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/919453110907" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat via WhatsApp">
         💬
     </a>
 
@@ -585,15 +587,15 @@
             <div class="hero-content">
                 <span class="badge">Future Software Developer</span>
                 <h1>Hi, I'm <br><span>Rajarshdev Pandey</span></h1>
-                <p>B.Tech Computer Science Engineering Student entering my 2nd Year (Graduation 2029). Specializing in systemic backend optimization, predictive application architecture, and rich user interface controls.</p>
+                <p>B.Tech Computer Science Engineering Student entering my 2nd Year (Graduation 2029). Specializing in algorithmic architectures, high-performance clean data modeling, and rich frontend application layers.</p>
                 <div class="btn-group">
                     <a href="https://github.com/Rajarshdevpandey" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Profile</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="https://wa.me/919453110907" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">WhatsApp Chat</a>
                 </div>
             </div>
             <div class="hero-image-container">
                 <div class="image-wrapper">
-                    <img src="https://i.postimg.cc/k4mXQkYn/1000099385.jpg" alt="Rajarshdev Pandey">
+                    <img src="photo.jpg" alt="Rajarshdev Pandey" onerror="this.src='photo.jpeg'; this.onerror=function(){this.src='1000099385.webp';}">
                 </div>
             </div>
         </div>
@@ -603,12 +605,12 @@
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-grid">
             <div class="skill-card">
-                <h3 style="color:#fff; margin-bottom:1rem;">⚡ Tech Passion</h3>
-                <p style="color:#9ca3af; font-size:0.98rem;">Passionate about cloud architecture pipelines, fast algorithmic workflows, and building modern tools for developer productivity ecosystems.</p>
+                <h3 style="color:#fff; margin-bottom:1rem; text-shadow: 0 0 10px rgba(0,240,255,0.4);">⚡ Tech Passion</h3>
+                <p style="color:#9ca3af; font-size:0.98rem;">Passionate about infrastructure automation workflows, deterministic computer architectures, and high-performance cross-platform software engineering frameworks.</p>
             </div>
             <div class="skill-card">
-                <h3 style="color:#fff; margin-bottom:1rem;">💡 Engineering Mindset</h3>
-                <p style="color:#9ca3af; font-size:0.98rem;">Dedicated to learning advanced framework logic, debugging low-level code blocks, and solving functional logic parameters elegantly.</p>
+                <h3 style="color:#fff; margin-bottom:1rem; text-shadow: 0 0 10px rgba(255,0,127,0.4);">💡 Engineering Mindset</h3>
+                <p style="color:#9ca3af; font-size:0.98rem;">Dedicated to learning systems architecture parameters, parsing optimized software logic loops, and refactoring functional algorithms cleanly.</p>
             </div>
         </div>
     </section>
@@ -642,21 +644,21 @@
                 <div>
                     <div class="card-icon">🏆</div>
                     <h3>NPCI 60 Days POTD Challenge</h3>
-                    <p>Successfully executed 60 consecutive days of advanced code evaluation data problems, optimizing complex structural data parameters.</p>
+                    <p>Successfully completed 60 consecutive days of non-stop analytical problem-solving routines, fine-tuning rigorous data-handling processes.</p>
                 </div>
             </div>
             <div class="card">
                 <div>
                     <div class="card-icon">🤝</div>
                     <h3>GeeksforGeeks Volunteer</h3>
-                    <p>Contributed actively within peer technical support communities, resolving documentation challenges and helping manage code sprints.</p>
+                    <p>Contributed actively within localized tech stack mentorship modules, reviewing documentation challenges and helping resolve logical errors for student peers.</p>
                 </div>
             </div>
             <div class="card">
                 <div>
                     <div class="card-icon">💼</div>
                     <h3>Thiranex Internship</h3>
-                    <p>Gained enterprise workflow knowledge during a rigorous internship block, designing application UI frameworks and backend routing pipelines.</p>
+                    <p>Acquired industry workflow dynamics within a developer sprint setup, aiding framework component modeling and UI router testing structures.</p>
                 </div>
             </div>
         </div>
@@ -664,12 +666,12 @@
 
     <section id="projects">
         <h2 class="section-title">Featured <span>Projects</span></h2>
-        <div class="cards-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 3rem auto 0 auto;">
+        <div class="cards-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
             <div class="card">
                 <div>
                     <div class="card-icon">📝</div>
                     <h3>AI Notes Generator</h3>
-                    <p>A production-level documentation intelligence engine designed to help engineering students automatically compile rich context maps and structured study records.</p>
+                    <p>A production-ready documentation platform built with functional contextual synthesis parsing, designed to automate complex study tracks for engineering batches.</p>
                 </div>
                 <div class="card-links">
                     <a href="https://rajarshdevpandey.github.io/notes/" target="_blank" rel="noopener noreferrer" class="card-link">Live Project Link</a>
@@ -684,16 +686,16 @@
         <div class="edu-grid">
             <div class="card">
                 <div>
-                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:700;">2025 - 2029</span>
+                    <span style="color:#00f0ff; font-size:0.85rem; font-weight:700;">2025 - 2029</span>
                     <h3 style="margin-top:0.5rem;">B.Tech in Computer Science Engineering</h3>
-                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">Entering 2nd Year (Engineering Core Deployment)</p>
+                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">Entering 2nd Year (Engineering Core Blocks)</p>
                 </div>
             </div>
             <div class="card">
                 <div>
-                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:700;">Completed</span>
+                    <span style="color:#00f0ff; font-size:0.85rem; font-weight:700;">Completed</span>
                     <h3 style="margin-top:0.5rem;">Higher Secondary Education (CBSE)</h3>
-                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">PCM Stream (Physics, Chemistry, Mathematics Focus)</p>
+                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">PCM Stream (Physics, Chemistry, Mathematics Specialization)</p>
                 </div>
             </div>
         </div>
@@ -738,18 +740,22 @@
             dot.style.top = e.clientY + 'px';
         });
 
-        // Hover expand effects on link items
-        const interactiveItems = document.querySelectorAll('a, button, .card, .skill-card');
-        interactiveItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                cursor.style.width = '45px';
-                cursor.style.height = '45px';
-                cursor.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+        // Expanding custom ring controller mapping
+        const magneticTargets = document.querySelectorAll('a, button, .card, .skill-card, .form-control');
+        magneticTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.style.width = '48px';
+                cursor.style.height = '48px';
+                cursor.style.borderColor = '#ff007f';
+                cursor.style.backgroundColor = 'rgba(255, 0, 127, 0.05)';
+                cursor.style.boxShadow = '0 0 20px rgba(255, 0, 127, 0.5)';
             });
-            item.addEventListener('mouseleave', () => {
-                cursor.style.width = '20px';
-                cursor.style.height = '20px';
+            target.addEventListener('mouseleave', () => {
+                cursor.style.width = '22px';
+                cursor.style.height = '22px';
+                cursor.style.borderColor = '#00f0ff';
                 cursor.style.backgroundColor = 'transparent';
+                cursor.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.5)';
             });
         });
     </script>
