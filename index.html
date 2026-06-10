@@ -1,5 +1,3 @@
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -210,13 +208,14 @@
             overflow: hidden;
             border: 3px solid #2563eb;
             box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+            background: rgba(255, 255, 255, 0.03);
         }
 
         .image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: top;
+            object-position: center 20%;
         }
 
         /* Sections General */
@@ -227,16 +226,24 @@
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 4rem;
+            letter-spacing: -0.5px;
         }
 
         .section-title span {
             background: linear-gradient(to right, #60a5fa, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         /* Skills Section */
@@ -247,18 +254,17 @@
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.01);
             border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 1.5rem;
-            border-radius: 16px;
+            border-radius: 12px;
             transition: all 0.3s ease;
         }
 
         .skill-card:hover {
-            border-color: rgba(37, 99, 235, 0.5);
-            background: rgba(37, 99, 235, 0.03);
+            border-color: rgba(37, 99, 235, 0.4);
+            background: rgba(37, 99, 235, 0.02);
             transform: translateY(-4px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
         }
 
         .skill-info {
@@ -278,12 +284,11 @@
             background: rgba(168, 85, 247, 0.1);
             padding: 0.1rem 0.5rem;
             border-radius: 999px;
-            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .skill-bar {
             height: 6px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 999px;
             position: relative;
             overflow: hidden;
@@ -301,14 +306,14 @@
         /* Cards Grid Layout */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
             padding: 2rem;
             transition: all 0.3s ease;
             display: flex;
@@ -317,10 +322,10 @@
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(168, 85, 247, 0.5);
-            background: rgba(168, 85, 247, 0.02);
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+            transform: translateY(-5px);
+            border-color: rgba(37, 99, 235, 0.4);
+            background: rgba(37, 99, 235, 0.01);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.05);
         }
 
         .card-icon {
@@ -360,59 +365,22 @@
             color: #60a5fa;
         }
 
-        /* Education Timeline */
-        .edu-timeline {
-            max-width: 800px;
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
             margin: 0 auto;
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid rgba(37, 99, 235, 0.2);
-        }
-
-        .edu-item {
-            position: relative;
-            margin-bottom: 3rem;
-        }
-
-        .edu-item::before {
-            content: '';
-            position: absolute;
-            left: calc(-2rem - 7px);
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #2563eb;
-            box-shadow: 0 0 10px #2563eb;
-        }
-
-        .edu-date {
-            font-size: 0.85rem;
-            color: #60a5fa;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .edu-title {
-            font-size: 1.25rem;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .edu-sub {
-            color: #9ca3af;
-            font-size: 0.95rem;
         }
 
         /* Contact Section */
         .contact-form-container {
             max-width: 600px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.005);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             padding: 2.5rem;
-            border-radius: 24px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            border-radius: 20px;
         }
 
         .social-row {
@@ -430,15 +398,14 @@
             font-size: 0.9rem;
             transition: all 0.3s;
             padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.01);
+            border: 1px solid rgba(255,255,255,0.04);
             border-radius: 8px;
         }
 
         .social-link:hover {
             color: #2563eb;
             border-color: #2563eb;
-            box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
             transform: translateY(-2px);
         }
 
@@ -446,20 +413,12 @@
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            color: #9ca3af;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
         .form-control {
             width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 0.85rem 1rem;
             color: white;
             font-size: 0.95rem;
             transition: all 0.3s;
@@ -468,8 +427,7 @@
         .form-control:focus {
             outline: none;
             border-color: #2563eb;
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         textarea.form-control {
@@ -483,15 +441,10 @@
             color: white;
             border: none;
             padding: 0.85rem;
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            transition: opacity 0.3s, transform 0.2s;
-        }
-
-        .btn-submit:hover {
-            opacity: 0.95;
-            transform: translateY(-1px);
+            transition: opacity 0.3s;
         }
 
         /* Floating WhatsApp Button */
@@ -524,11 +477,10 @@
             padding: 2rem;
             color: #4b5563;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
             margin-top: 4rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 968px) {
             .hero-row {
                 flex-direction: column-reverse;
@@ -537,9 +489,6 @@
             }
             .hero-content h1 {
                 font-size: 2.5rem;
-            }
-            .hero-content p {
-                margin: 0 auto 2rem auto;
             }
             .btn-group {
                 justify-content: center;
@@ -563,7 +512,7 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -572,32 +521,43 @@
         </div>
     </header>
 
-    <a href="https://wa.me/9453110907" class="whatsapp-float" target="_blank">
-        💬
-    </a>
+    <a href="https://wa.me/9453110907" class="whatsapp-float" target="_blank">💬</a>
 
     <section class="hero" id="about">
         <div class="hero-row">
             <div class="hero-content">
                 <span class="badge">Future Software Developer</span>
                 <h1>Hi, I'm <br><span>Rajarshdev Pandey</span></h1>
-                <p>B.Tech CSE Student & Aspiring Full Stack Developer. Currently entering my 2nd Year (Graduation 2029). Focused on algorithmic engineering, system architectures, and high-quality product deployments.</p>
+                <p>B.Tech CSE Student specializing in software architecture, high-performance clean layout development, and interactive full-stack user ecosystems.</p>
                 <div class="btn-group">
-                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="btn btn-primary">GitHub</a>
-                    <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" class="btn btn-secondary">LinkedIn</a>
-                    <a href="https://wa.me/9453110907" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="btn btn-primary">GitHub Profile</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
             <div class="hero-image-container">
                 <div class="image-wrapper">
-                    <img src="1000099385.webp" alt="Rajarshdev Pandey">
+                    <img src="1000099385.webp" alt="Rajarshdev Pandey" onerror="this.src='1000099385.jpg'; this.onerror=function(){this.src='1000099385.png';}">
                 </div>
             </div>
         </div>
     </section>
 
+    <section>
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-grid">
+            <div class="skill-card">
+                <h3 style="color:#fff; margin-bottom:1rem;">⚡ Tech Passion</h3>
+                <p style="color:#9ca3af; font-size:0.95rem;">Passionate about automated software engineering workflows, clean systemic architecture, and cutting edge web application ecosystems.</p>
+            </div>
+            <div class="skill-card">
+                <h3 style="color:#fff; margin-bottom:1rem;">💡 Engineering Mindset</h3>
+                <p style="color:#9ca3af; font-size:0.95rem;">Always learning, building out scalable tools, and exploring advanced functional programming patterns to optimize performance rules.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
-        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <div class="skill-info"><span class="skill-name">C Language</span></div>
@@ -609,109 +569,96 @@
             </div>
             <div class="skill-card">
                 <div class="skill-info"><span class="skill-name">Python</span><span class="skill-status">Learning</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 55%;"></div></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 60%;"></div></div>
             </div>
             <div class="skill-card">
                 <div class="skill-info"><span class="skill-name">Frontend (HTML, CSS, JS)</span></div>
                 <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
             </div>
-            <div class="skill-card">
-                <div class="skill-info"><span class="skill-name">Full Stack Architecture</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
-            </div>
         </div>
     </section>
 
-    <section id="certificates">
-        <h2 class="section-title">Certificates & <span>Experience</span></h2>
+    <section id="achievements">
+        <h2 class="section-title">Achievements</h2>
         <div class="cards-grid">
             <div class="card">
                 <div>
-                    <div class="card-icon">🚀</div>
+                    <div class="card-icon">🏆</div>
                     <h3>NPCI 60 Days POTD Challenge</h3>
-                    <p>Successfully completed 60 consecutive days of Problem of the Day challenge, refining logical capabilities and deep problem-solving data architectures.</p>
+                    <p>Successfully completed 60 continuous days of Problem of the Day challenge, optimizing complex problem-solving analytics.</p>
                 </div>
             </div>
             <div class="card">
                 <div>
                     <div class="card-icon">🤝</div>
                     <h3>GeeksforGeeks Volunteer</h3>
-                    <p>Contributed actively as a technical volunteer assisting peers, coordinating community coding roadmaps, and cultivating documentation workflows.</p>
+                    <p>Actively contributed within technical groups helping peers, driving developer interactions, and maintaining event paths.</p>
                 </div>
             </div>
             <div class="card">
                 <div>
                     <div class="card-icon">💼</div>
                     <h3>Thiranex Internship</h3>
-                    <p>Worked as a technical development intern, collaborating on production sprints, modern code paradigms, and feature deployment models.</p>
+                    <p>Worked as a technical development intern, executing tasks across production cycles and interface features.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Featured <span>Projects</span></h2>
-        <div class="cards-grid">
-            <div class="card">
+        <h2 class="section-title">Projects</h2>
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); justify-content: center;">
+            <div class="card" style="max-width: 500px; margin: 0 auto; width: 100%;">
                 <div>
                     <div class="card-icon">📝</div>
                     <h3>AI Notes Generator</h3>
-                    <p>An production-grade web intelligence engine helping students optimize context mapping, generate automated structured notes, and build systematic study pipelines.</p>
+                    <p>A production-ready web platform optimized with clean contextual synthesis workflows to build automated structured documentation.</p>
                 </div>
                 <div class="card-links">
-                    <a href="https://rajarshdevpandey.github.io/notes/" target="_blank" class="card-link">Live Project Link</a>
-                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="card-link">GitHub Code</a>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="card-icon">🛒</div>
-                    <h3>E-Commerce Frontend Website</h3>
-                    <p>A pristine product catalog interface engineered with dynamic component controls, precise rendering grids, and responsive cross-device layouts.</p>
-                </div>
-                <div class="card-links">
-                    <a href="https://www.linkedin.com/posts/himanshi-adhikari-b36234359_webdevelopment-ecommercewebsite-frontenddevelopment-ugcPost-7470357084295962625-4S6z/" target="_blank" class="card-link">LinkedIn Showreel</a>
+                    <a href="https://rajarshdevpandey.github.io/notes/" target="_blank" class="card-link">Live Project</a>
+                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="card-link">GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="education">
-        <h2 class="section-title">My <span>Education</span></h2>
-        <div class="edu-timeline">
-            <div class="edu-item">
-                <div class="edu-date">2025 - 2029</div>
-                <div class="edu-title">B.Tech in Computer Science Engineering (Entering 2nd Year)</div>
-                <div class="edu-sub">Undergraduate Engineering Architecture</div>
+        <h2 class="section-title">Education</h2>
+        <div class="edu-grid">
+            <div class="card">
+                <div>
+                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:600;">2025 - 2029</span>
+                    <h3 style="margin-top:0.5rem;">B.Tech in Computer Science Engineering</h3>
+                    <p style="margin-bottom:0.5rem; font-size:0.9rem; color:#9ca3af;">Entering 2nd Year</p>
+                </div>
             </div>
-            <div class="edu-item">
-                <div class="edu-date">Completed</div>
-                <div class="edu-title">Higher Secondary Education (CBSE)</div>
-                <div class="edu-sub">PCM Stream (Physics, Chemistry, Mathematics)</div>
+            <div class="card">
+                <div>
+                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:600;">Completed</span>
+                    <h3 style="margin-top:0.5rem;">Higher Secondary Education (CBSE)</h3>
+                    <p style="margin-bottom:0.5rem; font-size:0.9rem; color:#9ca3af;">PCM Stream (Physics, Chemistry, Mathematics)</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Contact <span>Me</span></h2>
+        <h2 class="section-title">Contact Me</h2>
         <div class="contact-form-container">
             <div class="social-row">
+                <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" class="social-link">LinkedIn</a>
                 <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" class="social-link">GeeksforGeeks</a>
                 <a href="https://www.instagram.com/dev__pandey_07?igsh=MWFxa2Zyemx0MnNkbQ==" target="_blank" class="social-link">Instagram</a>
-                <a href="mailto:prajarshdev@gmail.com" class="social-link">prajarshdev@gmail.com</a>
             </div>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" name="_replyto" id="email" class="form-control" placeholder="Enter your email" value="prajarshdev@gmail.com" required>
+                    <input type="email" name="_replyto" class="form-control" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea name="message" id="message" class="form-control" placeholder="Write your message here..." required></textarea>
+                    <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Send Message</button>
             </form>
@@ -724,5 +671,3 @@
 
 </body>
 </html>
-
-```
