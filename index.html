@@ -14,10 +14,37 @@
         }
 
         body {
-            background-color: #030712;
+            background: radial-gradient(circle at 50% 50%, #0b0f19 0%, #030712 100%);
             color: #f3f4f6;
             line-height: 1.6;
             overflow-x: hidden;
+            cursor: none; /* Custom premium cursor layout activation */
+        }
+
+        /* Custom Glowing Tech Cursor Aura */
+        #custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 99999;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+        }
+
+        #custom-cursor-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #a855f7;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 99999;
+            box-shadow: 0 0 10px #a855f7;
         }
 
         /* Neon Scrollbar */
@@ -28,20 +55,20 @@
             background: #030712;
         }
         ::-webkit-scrollbar-thumb {
-            background: #2563eb;
+            background: linear-gradient(#3b82f6, #a855f7);
             border-radius: 999px;
         }
 
-        /* Navbar */
+        /* Header / Navbar */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(3, 7, 18, 0.8);
-            backdrop-filter: blur(12px);
+            background: rgba(3, 7, 18, 0.7);
+            backdrop-filter: blur(16px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
         }
 
         .nav-container {
@@ -50,42 +77,45 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 800;
             color: #fff;
             text-decoration: none;
             letter-spacing: -0.5px;
-            text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
         }
 
         .logo span {
-            color: #2563eb;
+            color: #3b82f6;
+            background: linear-gradient(to right, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav ul li a {
             color: #9ca3af;
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #2563eb;
-            text-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+            color: #fff;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
         }
 
-        /* Hero Section */
+        /* Hero Section Layout */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -109,89 +139,82 @@
 
         .badge {
             display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            border: 1px solid rgba(37, 99, 235, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.3);
             color: #60a5fa;
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 9999px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
             color: #ffffff;
+            letter-spacing: -1px;
         }
 
         .hero-content h1 span {
-            background: linear-gradient(to right, #2563eb, #a855f7);
+            background: linear-gradient(to right, #3b82f6 30%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #9ca3af;
             margin-bottom: 2.5rem;
-            max-width: 540px;
+            max-width: 550px;
         }
 
         .btn-group {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
+            gap: 0.6rem;
+            padding: 0.85rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.95rem;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #3b82f6, #7c3aed);
             color: white;
             border: none;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 25px rgba(59, 130, 246, 0.4);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(37, 99, 235, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #2563eb;
-            transform: translateY(-2px);
-        }
-
-        .btn-whatsapp {
-            background: #25d366;
-            color: white;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+            background: rgba(59, 130, 246, 0.05);
+            border-color: #3b82f6;
+            transform: translateY(-3px);
         }
 
         .hero-image-container {
@@ -200,36 +223,50 @@
             justify-content: center;
         }
 
+        /* Advanced Premium Curvature Card Mask */
         .image-wrapper {
             position: relative;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
+            width: 330px;
+            height: 420px;
+            border-radius: 24px;
             overflow: hidden;
-            border: 3px solid #2563eb;
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
-            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.15);
+            background: #111827;
+        }
+
+        .image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(3, 7, 18, 0.8) 100%);
+            z-index: 2;
         }
 
         .image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 20%;
+            object-position: center 15%;
+            transition: transform 0.5s ease;
         }
 
-        /* Sections General */
+        .image-wrapper:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Sections Structure */
         section {
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 4-rem;
             letter-spacing: -0.5px;
         }
 
@@ -243,52 +280,59 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin-top: 3rem;
         }
 
-        /* Skills Section */
+        /* Skills Section Elements */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
+            margin-top: 3rem;
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.01);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            padding: 1.8rem;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .skill-card:hover {
-            border-color: rgba(37, 99, 235, 0.4);
-            background: rgba(37, 99, 235, 0.02);
-            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(59, 130, 246, 0.03);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.05);
         }
 
         .skill-info {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
+            align-items: center;
         }
 
         .skill-name {
-            font-weight: 600;
-            color: #e5e7eb;
+            font-weight: 700;
+            color: #f3f4f6;
+            font-size: 1.05rem;
         }
 
         .skill-status {
-            font-size: 0.8rem;
-            color: #a855f7;
-            background: rgba(168, 85, 247, 0.1);
-            padding: 0.1rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #c084fc;
+            background: rgba(168, 85, 247, 0.15);
+            padding: 0.2rem 0.6rem;
             border-radius: 999px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .skill-bar {
-            height: 6px;
-            background: rgba(255, 255, 255, 0.05);
+            height: 7px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 999px;
             position: relative;
             overflow: hidden;
@@ -299,70 +343,73 @@
             top: 0;
             left: 0;
             height: 100%;
-            background: linear-gradient(to right, #2563eb, #a855f7);
+            background: linear-gradient(to right, #3b82f6, #a855f7);
             border-radius: 999px;
         }
 
-        /* Cards Grid Layout */
+        /* General Layout Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.2rem;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(37, 99, 235, 0.4);
-            background: rgba(37, 99, 235, 0.01);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.05);
+            transform: translateY(-6px);
+            border-color: rgba(168, 85, 247, 0.4);
+            background: rgba(168, 85, 247, 0.02);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.08);
         }
 
         .card-icon {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #60a5fa;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.4rem;
         }
 
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #ffffff;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
             font-weight: 700;
         }
 
         .card p {
             color: #9ca3af;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
 
         .card-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .card-link {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #2563eb;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #3b82f6;
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .card-link:hover {
             color: #60a5fa;
+            text-decoration: underline;
         }
 
         .edu-grid {
@@ -370,55 +417,58 @@
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 3rem auto 0 auto;
         }
 
-        /* Contact Section */
+        /* Contact Components Layout */
         .contact-form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.005);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 2.5rem;
-            border-radius: 20px;
+            max-width: 650px;
+            margin: 3rem auto 0 auto;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         .social-row {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
             flex-wrap: wrap;
         }
 
         .social-link {
-            color: #9ca3af;
+            color: #f3f4f6;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            background: rgba(255,255,255,0.01);
-            border: 1px solid rgba(255,255,255,0.04);
-            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.65rem 1.4rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(168, 85, 247, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
         }
 
         .social-link:hover {
-            color: #2563eb;
-            border-color: #2563eb;
-            transform: translateY(-2px);
+            color: #3b82f6;
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.6rem;
         }
 
         .form-control {
             width: 100%;
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 0.85rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
             color: white;
             font-size: 0.95rem;
             transition: all 0.3s;
@@ -426,84 +476,89 @@
 
         .form-control:focus {
             outline: none;
-            border-color: #2563eb;
-            background: rgba(255, 255, 255, 0.04);
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 15px rgba(3b, 130, 246, 0.25);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 130px;
         }
 
         .btn-submit {
             width: 100%;
-            background: linear-gradient(to right, #2563eb, #7c3aed);
+            background: linear-gradient(to right, #3b82f6, #7c3aed);
             color: white;
             border: none;
-            padding: 0.85rem;
-            border-radius: 8px;
-            font-weight: 600;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
         }
 
-        /* Floating WhatsApp Button */
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Floating Absolute WhatsApp Action Grid */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
+            bottom: 35px;
+            right: 35px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
             color: #fff;
             border-radius: 50%;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
-            z-index: 100;
-            width: 60px;
-            height: 60px;
+            font-size: 32px;
+            box-shadow: 0px 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            width: 65px;
+            height: 65px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(10deg);
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             color: #4b5563;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-            margin-top: 4rem;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            margin-top: 5rem;
         }
 
+        /* Responsive Adapters */
         @media (max-width: 968px) {
+            body { cursor: auto; }
+            #custom-cursor, #custom-cursor-dot { display: none; }
             .hero-row {
                 flex-direction: column-reverse;
                 text-align: center;
-                gap: 2rem;
+                gap: 3rem;
             }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .btn-group {
-                justify-content: center;
-            }
-            nav ul {
-                display: none;
-            }
-            .image-wrapper {
-                width: 260px;
-                height: 260px;
-            }
+            .hero-content h1 { font-size: 2.8rem; }
+            .btn-group { justify-content: center; }
+            nav ul { display: none; }
+            .image-wrapper { width: 280px; height: 360px; }
         }
     </style>
 </head>
 <body>
+
+    <div id="custom-cursor"></div>
+    <div id="custom-cursor-dot"></div>
 
     <header>
         <div class="nav-container">
@@ -521,22 +576,24 @@
         </div>
     </header>
 
-    <a href="https://wa.me/9453110907" class="whatsapp-float" target="_blank">💬</a>
+    <a href="https://wa.me/9453110907" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        💬
+    </a>
 
     <section class="hero" id="about">
         <div class="hero-row">
             <div class="hero-content">
                 <span class="badge">Future Software Developer</span>
                 <h1>Hi, I'm <br><span>Rajarshdev Pandey</span></h1>
-                <p>B.Tech CSE Student specializing in software architecture, high-performance clean layout development, and interactive full-stack user ecosystems.</p>
+                <p>B.Tech Computer Science Engineering Student entering my 2nd Year (Graduation 2029). Specializing in systemic backend optimization, predictive application architecture, and rich user interface controls.</p>
                 <div class="btn-group">
-                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="btn btn-primary">GitHub Profile</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    <a href="https://github.com/Rajarshdevpandey" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Profile</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
             <div class="hero-image-container">
                 <div class="image-wrapper">
-                    <img src="1000099385.webp" alt="Rajarshdev Pandey" onerror="this.src='1000099385.jpg'; this.onerror=function(){this.src='1000099385.png';}">
+                    <img src="https://i.postimg.cc/k4mXQkYn/1000099385.jpg" alt="Rajarshdev Pandey">
                 </div>
             </div>
         </div>
@@ -547,17 +604,17 @@
         <div class="about-grid">
             <div class="skill-card">
                 <h3 style="color:#fff; margin-bottom:1rem;">⚡ Tech Passion</h3>
-                <p style="color:#9ca3af; font-size:0.95rem;">Passionate about automated software engineering workflows, clean systemic architecture, and cutting edge web application ecosystems.</p>
+                <p style="color:#9ca3af; font-size:0.98rem;">Passionate about cloud architecture pipelines, fast algorithmic workflows, and building modern tools for developer productivity ecosystems.</p>
             </div>
             <div class="skill-card">
                 <h3 style="color:#fff; margin-bottom:1rem;">💡 Engineering Mindset</h3>
-                <p style="color:#9ca3af; font-size:0.95rem;">Always learning, building out scalable tools, and exploring advanced functional programming patterns to optimize performance rules.</p>
+                <p style="color:#9ca3af; font-size:0.98rem;">Dedicated to learning advanced framework logic, debugging low-level code blocks, and solving functional logic parameters elegantly.</p>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">Technical <span>Skills</span></h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <div class="skill-info"><span class="skill-name">C Language</span></div>
@@ -579,76 +636,76 @@
     </section>
 
     <section id="achievements">
-        <h2 class="section-title">Achievements</h2>
+        <h2 class="section-title">Key <span>Achievements</span></h2>
         <div class="cards-grid">
             <div class="card">
                 <div>
                     <div class="card-icon">🏆</div>
                     <h3>NPCI 60 Days POTD Challenge</h3>
-                    <p>Successfully completed 60 continuous days of Problem of the Day challenge, optimizing complex problem-solving analytics.</p>
+                    <p>Successfully executed 60 consecutive days of advanced code evaluation data problems, optimizing complex structural data parameters.</p>
                 </div>
             </div>
             <div class="card">
                 <div>
                     <div class="card-icon">🤝</div>
                     <h3>GeeksforGeeks Volunteer</h3>
-                    <p>Actively contributed within technical groups helping peers, driving developer interactions, and maintaining event paths.</p>
+                    <p>Contributed actively within peer technical support communities, resolving documentation challenges and helping manage code sprints.</p>
                 </div>
             </div>
             <div class="card">
                 <div>
                     <div class="card-icon">💼</div>
                     <h3>Thiranex Internship</h3>
-                    <p>Worked as a technical development intern, executing tasks across production cycles and interface features.</p>
+                    <p>Gained enterprise workflow knowledge during a rigorous internship block, designing application UI frameworks and backend routing pipelines.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); justify-content: center;">
-            <div class="card" style="max-width: 500px; margin: 0 auto; width: 100%;">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="cards-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 3rem auto 0 auto;">
+            <div class="card">
                 <div>
                     <div class="card-icon">📝</div>
                     <h3>AI Notes Generator</h3>
-                    <p>A production-ready web platform optimized with clean contextual synthesis workflows to build automated structured documentation.</p>
+                    <p>A production-level documentation intelligence engine designed to help engineering students automatically compile rich context maps and structured study records.</p>
                 </div>
                 <div class="card-links">
-                    <a href="https://rajarshdevpandey.github.io/notes/" target="_blank" class="card-link">Live Project</a>
-                    <a href="https://github.com/Rajarshdevpandey" target="_blank" class="card-link">GitHub</a>
+                    <a href="https://rajarshdevpandey.github.io/notes/" target="_blank" rel="noopener noreferrer" class="card-link">Live Project Link</a>
+                    <a href="https://github.com/Rajarshdevpandey" target="_blank" rel="noopener noreferrer" class="card-link">GitHub Code</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="education">
-        <h2 class="section-title">Education</h2>
+        <h2 class="section-title">My <span>Education</span></h2>
         <div class="edu-grid">
             <div class="card">
                 <div>
-                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:600;">2025 - 2029</span>
+                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:700;">2025 - 2029</span>
                     <h3 style="margin-top:0.5rem;">B.Tech in Computer Science Engineering</h3>
-                    <p style="margin-bottom:0.5rem; font-size:0.9rem; color:#9ca3af;">Entering 2nd Year</p>
+                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">Entering 2nd Year (Engineering Core Deployment)</p>
                 </div>
             </div>
             <div class="card">
                 <div>
-                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:600;">Completed</span>
+                    <span style="color:#60a5fa; font-size:0.85rem; font-weight:700;">Completed</span>
                     <h3 style="margin-top:0.5rem;">Higher Secondary Education (CBSE)</h3>
-                    <p style="margin-bottom:0.5rem; font-size:0.9rem; color:#9ca3af;">PCM Stream (Physics, Chemistry, Mathematics)</p>
+                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">PCM Stream (Physics, Chemistry, Mathematics Focus)</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
+        <h2 class="section-title">Contact <span>Me</span></h2>
         <div class="contact-form-container">
             <div class="social-row">
-                <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" class="social-link">LinkedIn</a>
-                <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" class="social-link">GeeksforGeeks</a>
-                <a href="https://www.instagram.com/dev__pandey_07?igsh=MWFxa2Zyemx0MnNkbQ==" target="_blank" class="social-link">Instagram</a>
+                <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" rel="noopener noreferrer" class="social-link">GeeksforGeeks</a>
+                <a href="https://www.instagram.com/dev__pandey_07?igsh=MWFxa2Zyemx0MnNkbQ==" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
             </div>
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
@@ -669,5 +726,32 @@
         <p>&copy; 2026 Rajarshdev Pandey | Future Software Developer</p>
     </footer>
 
+    <script>
+        const cursor = document.getElementById('custom-cursor');
+        const dot = document.getElementById('custom-cursor-dot');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+        });
+
+        // Hover expand effects on link items
+        const interactiveItems = document.querySelectorAll('a, button, .card, .skill-card');
+        interactiveItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                cursor.style.width = '45px';
+                cursor.style.height = '45px';
+                cursor.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+            });
+            item.addEventListener('mouseleave', () => {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
 </body>
 </html>
