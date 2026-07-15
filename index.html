@@ -223,8 +223,10 @@
             flex: 1;
             display: flex;
             justify-content: center;
+            perspective: 1000px; /* Essential for 3D depth tracking */
         }
 
+        /* 3D Interactive Photo Grid Wrap */
         .image-wrapper {
             position: relative;
             width: 300px;
@@ -234,6 +236,15 @@
             border: 3px solid #00f0ff;
             box-shadow: 0 0 40px rgba(0, 240, 255, 0.45);
             background: #111827;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+        }
+
+        /* Spatial motion depth on interaction */
+        .image-wrapper:hover {
+            transform: translateZ(30px) scale(1.06) rotateY(8deg) rotateX(-5deg);
+            box-shadow: -10px 15px 45px rgba(0, 240, 255, 0.6), 10px -5px 30px rgba(255, 0, 127, 0.4);
+            border-color: #ff007f;
         }
 
         .image-wrapper img {
@@ -241,6 +252,11 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.03);
         }
 
         section {
@@ -355,6 +371,103 @@
             text-decoration: underline;
         }
 
+        /* Cyberpunk Contact Panel Styles */
+        .contact-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(13, 21, 39, 0.6);
+            border: 1px solid rgba(255, 0, 127, 0.3);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .input-group label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #00f0ff;
+            letter-spacing: 1px;
+        }
+
+        .input-group input, .input-group textarea {
+            background: rgba(3, 7, 18, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #ff007f;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.25);
+            background: rgba(3, 7, 18, 0.9);
+        }
+
+        .contact-submit-btn {
+            background: linear-gradient(135deg, #ff007f, #7c3aed);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 0, 127, 0.3);
+            margin-top: 0.5rem;
+        }
+
+        .contact-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 0, 127, 0.6);
+        }
+
+        .footer-social-cluster {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .email-display-tag {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .email-display-tag a {
+            color: #00f0ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .email-display-tag a:hover {
+            color: #ff007f;
+            text-decoration: underline;
+        }
+
         /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
@@ -387,7 +500,7 @@
             color: #4b5563;
             font-size: 0.95rem;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
-            margin-top: 5rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 968px) {
@@ -402,6 +515,7 @@
             .social-matrix-grid { justify-content: center; }
             nav ul { display: none; }
             .image-wrapper { width: 260px; height: 260px; }
+            .image-wrapper:hover { transform: none; } /* Disable 3D shift on touch screens */
         }
     </style>
 </head>
@@ -419,12 +533,13 @@
                     <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#credentials">Credentials</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- WhatsApp Direct Link Float -->
+    <!-- WhatsApp Floating Active Trigger -->
     <a href="https://wa.me/919453110907" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat via WhatsApp">💬</a>
 
     <!-- Hero Matrix Section -->
@@ -435,20 +550,13 @@
                 <h1>Hi, I'm <br><span>Rajarshdev Pandey</span></h1>
                 <p>B.Tech Computer Science Engineering student entering my 2nd year at <strong>IEC College of Engineering and Technology, Greater Noida</strong> (affiliated with AKTU, Graduation Batch 2029). Building algorithmic models and clean software structures.</p>
                 
-                <!-- Explicit Matrix of Required Links (No FB, Snap, Telegram) -->
-                    <!-- Explicit Matrix of Required Links -->
-<div class="social-matrix-grid">
-    <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn</a>
-    <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GeeksforGeeks</a>
-    <a href="https://leetcode.com/u/Rajarshdev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LeetCode</a>
-    <a href="https://github.com/Rajarshdev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
-    <a href="https://www.instagram.com/rajarshdev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Instagram</a>
-    
-    <!-- Tumhare naye verified links yahan add ho gaye hain 👇 -->
-    <a href="https://t.me/dev_pandey7" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Telegram</a>
-    <a href="https://www.snapchat.com/add/devpandey_007?share_id=JNbp9rBvubU&locale=en-US" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Snapchat</a>
-    <a href="https://www.facebook.com/share/1Bx24TtTZo/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Facebook</a>
-</div>
+                <!-- Explicit Clean Grid: Only Core Developer Codes Up Top -->
+                <div class="social-matrix-grid">
+                    <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn</a>
+                    <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GeeksforGeeks</a>
+                    <a href="https://leetcode.com/u/Rajarshdev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LeetCode</a>
+                    <a href="https://github.com/Rajarshdev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+                </div>
             </div>
             <div class="hero-image-container">
                 <div class="image-wrapper">
@@ -497,7 +605,6 @@
                 </div>
             </div>
             
-            <!-- Verified Paths (MS, IBM & Simplilearn) -->
             <div class="card">
                 <div>
                     <div class="card-meta">Verified Paths</div>
@@ -519,7 +626,6 @@
     <section id="credentials">
         <h2 class="section-title">Industrial Credentials & <span>Hackathons</span></h2>
         <div class="cards-grid">
-            
             <div class="card">
                 <div class="cert-img-box">
                     <img src="thiranex_certificate.jpg" alt="Thiranex Certificate">
@@ -557,12 +663,50 @@
                     <p>Actively participating in real-time competitive hackathons, team coding prototypes, and engineering building tracks within the college ecosystem.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Brand New Contact & Full Social Clusters Area -->
+    <section id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <form class="contact-form" action="#" onsubmit="event.preventDefault(); alert('Message simulation transmitted successfully!');">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter candidate name..." required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="name@company.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="+91 00000 00000" required>
+                </div>
+                <div class="input-group">
+                    <label>Message Matrix</label>
+                    <textarea rows="4" placeholder="Write your requirements here..." required></textarea>
+                </div>
+                <button type="submit" class="contact-submit-btn">Transmit Message</button>
+            </form>
+
+            <!-- Bottom Target Social Matrix & Official Support Mail Node -->
+            <div class="footer-social-cluster">
+                <a href="https://wa.me/919453110907" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">WhatsApp</a>
+                <a href="https://www.facebook.com/share/1Bx24TtTZo/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Facebook</a>
+                <a href="https://t.me/dev_pandey7" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Telegram</a>
+                <a href="https://www.instagram.com/rajarshdev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Instagram</a>
+                <a href="https://www.snapchat.com/add/devpandey_007?share_id=JNbp9rBvubU&locale=en-US" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Snapchat</a>
+            </div>
+
+            <div class="email-display-tag">
+                Direct Communication Portal: <a href="mailto:prajarshdev@gmail.com">prajarshdev@gmail.com</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Rajarshdev Pandey</p>
+        <p>&copy; 2026 Rajarshdev Pandey | Terminal Architecture</p>
     </footer>
 
     <script>
