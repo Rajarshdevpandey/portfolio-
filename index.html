@@ -116,7 +116,7 @@
 
         /* Hero Layout Area */
         .hero {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             max-width: 1200px;
@@ -152,7 +152,7 @@
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -171,37 +171,38 @@
             font-size: 1.15rem;
             color: #9ca3af;
             margin-bottom: 2.5rem;
-            max-width: 550px;
+            max-width: 600px;
         }
 
-        .btn-group {
+        .social-matrix-grid {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            padding: 0.85rem 2rem;
+            padding: 0.75rem 1.6rem;
             border-radius: 12px;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #00f0ff, #7c3aed);
             color: white;
             border: none;
-            box-shadow: 0 4px 25px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 4px 25px rgba(0, 240, 255, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.7);
+            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.6);
         }
 
         .btn-secondary {
@@ -224,11 +225,10 @@
             justify-content: center;
         }
 
-        /* Hero Profile Pic Border Engine */
         .image-wrapper {
             position: relative;
-            width: 320px;
-            height: 320px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid #00f0ff;
@@ -241,11 +241,6 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .image-wrapper:hover img {
-            transform: scale(1.08);
         }
 
         section {
@@ -266,102 +261,9 @@
             background: linear-gradient(to right, #00f0ff, #ff007f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
         }
 
-        /* Skills Section Grid Styling */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .skill-card {
-            background: rgba(13, 21, 39, 0.4);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            border-radius: 20px;
-            padding: 2.2rem;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-6px);
-            border-color: #00f0ff;
-            background: rgba(0, 240, 255, 0.03);
-            box-shadow: 0 15px 35px rgba(0, 240, 255, 0.25);
-        }
-
-        .skill-badge-title {
-            font-size: 0.85rem;
-            color: #ff007f;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-card h3 {
-            font-size: 1.4rem;
-            color: #ffffff;
-            margin-bottom: 0.8rem;
-        }
-
-        .skill-card p {
-            color: #9ca3af;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-link {
-            font-size: 0.9rem;
-            color: #00f0ff;
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.2s;
-        }
-
-        .skill-link:hover {
-            color: #ff007f;
-            text-decoration: underline;
-        }
-
-        /* GFG & Coding Stats Panel */
-        .stats-panel {
-            background: rgba(13, 21, 39, 0.6);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            border-radius: 20px;
-            padding: 2.2rem;
-            margin-bottom: 4rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
-        }
-
-        .stat-item h4 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #00f0ff, #ff007f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.3rem;
-        }
-
-        .stat-item p {
-            color: #9ca3af;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Matrix Cards Engine Configs */
+        /* Education & Skills Card Panels */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -387,9 +289,29 @@
             box-shadow: 0 15px 35px rgba(0, 240, 255, 0.25);
         }
 
+        .card h3 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        .card-meta {
+            font-size: 0.9rem;
+            color: #00f0ff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
         .cert-img-box {
             width: 100%;
-            height: 190px;
+            height: 180px;
             border-radius: 12px;
             overflow: hidden;
             margin-bottom: 1.2rem;
@@ -401,25 +323,36 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s;
-        }
-        
-        .card:hover .cert-img-box img {
-            transform: scale(1.05);
         }
 
-        .card h3 {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
         }
 
-        .cert-org {
-            font-size: 0.9rem;
+        .skill-tag {
+            background: rgba(0, 240, 255, 0.06);
+            border: 1px solid rgba(0, 240, 255, 0.3);
             color: #00f0ff;
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+        }
+
+        .external-link {
+            font-size: 0.9rem;
+            color: #ff007f;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .external-link:hover {
+            text-decoration: underline;
         }
 
         /* Floating WhatsApp Button */
@@ -440,13 +373,12 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.18) rotate(8deg);
-            box-shadow: 0px 12px 30px rgba(37, 211, 102, 0.7);
+            transform: scale(1.15) rotate(5deg);
         }
 
         footer {
@@ -467,25 +399,24 @@
                 gap: 3rem;
             }
             .hero-content h1 { font-size: 2.8rem; }
-            .btn-group { justify-content: center; }
+            .social-matrix-grid { justify-content: center; }
             nav ul { display: none; }
-            .image-wrapper { width: 280px; height: 280px; }
+            .image-wrapper { width: 260px; height: 260px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cyber Space Cursor Elements -->
     <div id="custom-cursor"></div>
     <div id="custom-cursor-dot"></div>
 
-    <!-- Header / Navbar -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Rajarshdev<span>.dev</span></a>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#credentials">Credentials</a></li>
                 </ul>
@@ -493,95 +424,96 @@
         </div>
     </header>
 
-    <!-- WhatsApp Direct Link -->
-    <a href="https://wa.me/919453110907" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat via WhatsApp">
-        💬
-    </a>
+    <!-- WhatsApp Direct Link Float -->
+    <a href="https://wa.me/919453110907" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat via WhatsApp">💬</a>
 
-    <!-- Hero Section -->
+    <!-- Hero Matrix Section -->
     <section class="hero" id="about">
         <div class="hero-row">
             <div class="hero-content">
-                <span class="badge">Future Software Developer</span>
+                <span class="badge">Computer Science Engineer</span>
                 <h1>Hi, I'm <br><span>Rajarshdev Pandey</span></h1>
-                <p>B.Tech Computer Science Engineering Student entering my 2nd Year (Graduation 2029). Specializing in data structures, high-performance clean algorithmic modeling, and modern web applications.</p>
-                <div class="btn-group">
-                    <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn Profile</a>
-                    <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GFG Profile</a>
+                <p>B.Tech Computer Science Engineering student entering my 2nd year at <strong>IEC College of Engineering and Technology, Greater Noida</strong> (affiliated with AKTU, Graduation Batch 2029). Building algorithmic models and clean software structures.</p>
+                
+                <!-- Explicit Matrix of Required Links (No FB, Snap, Telegram) -->
+                <div class="social-matrix-grid">
+                    <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn</a>
+                    <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GeeksforGeeks</a>
+                    <a href="https://leetcode.com/u/Rajarshdev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LeetCode</a>
+                    <a href="https://github.com/Rajarshdev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+                    <a href="https://www.instagram.com/rajarshdev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Instagram</a>
                 </div>
             </div>
             <div class="hero-image-container">
                 <div class="image-wrapper">
-                    <!-- Profile Photo Configuration -->
                     <img src="photo.jpg" alt="Rajarshdev Pandey">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Me & Coding Stats Panel -->
-    <section>
-        <h2 class="section-title">About <span>Me</span></h2>
-        <div class="stats-panel">
-            <div class="stat-item">
-                <h4 class="counter">180+</h4>
-                <p>GFG Problems Solved</p>
+    <!-- Education Roadmap Section -->
+    <section id="education">
+        <h2 class="section-title">Academic <span>Timeline</span></h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div>
+                    <div class="card-meta">2025 - 2029 (Current)</div>
+                    <h3>B.Tech - Computer Science Engineering</h3>
+                    <p>IEC College of Engineering and Technology, Greater Noida (AKTU). Currently managing technical frameworks and structural engineering architectures.</p>
+                </div>
             </div>
-            <div class="stat-item">
-                <h4 class="counter">60</h4>
-                <p>GFG POTD Streak Days</p>
-            </div>
-            <div class="stat-item">
-                <h4 class="counter">50+</h4>
-                <p>LeetCode Solved</p>
+            <div class="card">
+                <div>
+                    <div class="card-meta">Intermediate</div>
+                    <h3>12th Grade Secondary Education</h3>
+                    <p>Completed structural higher secondary matrix under the Central Board of Secondary Education (CBSE Board).</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Skills & Microsoft / IBM Badges Area -->
+    <!-- Pure Core Skills Section -->
     <section id="skills">
-        <h2 class="section-title">Technical <span>Skills & Verified Paths</span></h2>
-        <div class="skills-grid">
+        <h2 class="section-title">Core Technical <span>Skills</span></h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div>
+                    <div class="card-meta">Languages & Web</div>
+                    <h3>Programming Foundations</h3>
+                    <p>Core development matrices optimized for computational syntax and presentation architecture layers.</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">C Programming</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Microsoft AI Badge Card -->
-            <div class="skill-card">
+            <!-- Verified Paths (MS, IBM & Simplilearn) -->
+            <div class="card">
                 <div>
-                    <div class="skill-badge-title">Microsoft Verified</div>
-                    <h3>Artificial Intelligence (AI)</h3>
-                    <p>Advanced study paths covering core cloud AI implementations, algorithmic automation systems, and modern intelligence frameworks.</p>
+                    <div class="card-meta">Verified Paths</div>
+                    <h3>Cloud Data & AI Ecosystems</h3>
+                    <p>Industrial learning frameworks completed across automation engine stacks.</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">Microsoft AI Path</span>
+                        <span class="skill-tag">IBM Data Science</span>
+                        <span class="skill-tag">Simplilearn verified</span>
+                        <span class="skill-tag">Snowflake Core</span>
+                    </div>
+                    <a href="https://www.credly.com/badges/2e55aa42-70fe-4995-8c2f-ed9ef6eade86/public_url" target="_blank" rel="noopener noreferrer" class="external-link">Verify Credentials Grid →</a>
                 </div>
-                <a href="https://learn.microsoft.com/api/achievements/share/en-us/RajarshdevPandey-0068/WMPRCLRN?sharingId=2129119490155DFE" target="_blank" rel="noopener noreferrer" class="skill-link">View Achievement Link →</a>
             </div>
-
-            <!-- IBM Credly Card -->
-            <div class="skill-card">
-                <div>
-                    <div class="skill-badge-title">IBM Verified via Credly</div>
-                    <h3>Data Science Foundations</h3>
-                    <p>Official structural framework credentials from IBM for handling secure data processing systems and high-scale structural modeling.</p>
-                </div>
-                <a href="https://www.credly.com/badges/2e55aa42-70fe-4995-8c2f-ed9ef6eade86/public_url" target="_blank" rel="noopener noreferrer" class="skill-link">Verify IBM Badge on Credly →</a>
-            </div>
-
-            <!-- MS Learn Profile Portal -->
-            <div class="skill-card">
-                <div>
-                    <div class="skill-badge-title">Learning Engine</div>
-                    <h3>Microsoft Learn Profile</h3>
-                    <p>Centralized hub detailing my technical modules, sandbox achievements, and continuous updates in cloud compute engineering.</p>
-                </div>
-                <a href="https://learn.microsoft.com/en-us/users/rajarshdevpandey-0068/" target="_blank" rel="noopener noreferrer" class="skill-link">Explore Full Microsoft Profile →</a>
-            </div>
-
         </div>
     </section>
 
-    <!-- Credentials Section with Single Fixed Names -->
+    <!-- Credentials & Workshops Area -->
     <section id="credentials">
-        <h2 class="section-title">Industrial <span>Credentials</span></h2>
+        <h2 class="section-title">Industrial Credentials & <span>Hackathons</span></h2>
         <div class="cards-grid">
             
-            <!-- 1. Thiranex -->
             <div class="card">
                 <div class="cert-img-box">
                     <img src="thiranex_certificate.jpg" alt="Thiranex Certificate">
@@ -592,7 +524,6 @@
                 </div>
             </div>
 
-            <!-- 2. GFG Volunteer -->
             <div class="card">
                 <div class="cert-img-box">
                     <img src="gfg_volunteer_certificate.jpg" alt="GFG Volunteer Certificate">
@@ -603,7 +534,6 @@
                 </div>
             </div>
 
-            <!-- 3. GFG 60 Days -->
             <div class="card">
                 <div class="cert-img-box">
                     <img src="gfg_potd_certificate.jpg" alt="GFG 60 Days Certificate">
@@ -611,6 +541,14 @@
                 <div>
                     <div class="cert-org">GeeksforGeeks Core</div>
                     <h3>60 Days POTD Challenge</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="card-meta">Competitions</div>
+                    <h3>Hackathons & Technical Workshops</h3>
+                    <p>Actively participating in real-time competitive hackathons, team coding prototypes, and engineering building tracks within the college ecosystem.</p>
                 </div>
             </div>
 
