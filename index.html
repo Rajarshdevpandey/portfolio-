@@ -18,7 +18,7 @@
             color: #f3f4f6;
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: none; /* Premium Custom Cursor Path Enabled */
+            cursor: none; 
         }
 
         /* Cyber Neon Cursor Aura */
@@ -138,7 +138,7 @@
 
         .badge {
             display: inline-block;
-            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 7f, 0.1));
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 0, 127, 0.1));
             border: 1px solid rgba(0, 240, 255, 0.4);
             color: #00f0ff;
             padding: 0.5rem 1.2rem;
@@ -224,41 +224,32 @@
             justify-content: center;
         }
 
-        /* Custom Cyber Edge Image Curved Card Frame */
+        /* Hero Profile Pic Border Engine */
         .image-wrapper {
             position: relative;
             width: 320px;
-            height: 410px;
-            border-radius: 24px;
+            height: 320px;
+            border-radius: 50%;
             overflow: hidden;
-            border: 2px solid #00f0ff;
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.35);
+            border: 3px solid #00f0ff;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.45);
             background: #111827;
-        }
-
-        .image-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 65%, rgba(3, 7, 18, 0.9) 100%);
-            z-index: 2;
         }
 
         .image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 15%;
+            object-position: center;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .image-wrapper:hover img {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
-        /* Content Modular Layout Configs */
         section {
-            padding: 7rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -278,85 +269,108 @@
             text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Neon Technical Structural Elements */
+        /* Skills Section Grid Styling */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         .skill-card {
             background: rgba(13, 21, 39, 0.4);
-            border: 1px solid rgba(0, 240, 255, 0.15);
-            padding: 1.8rem;
-            border-radius: 16px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 20px;
+            padding: 2.2rem;
             backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .skill-card:hover {
+            transform: translateY(-6px);
             border-color: #00f0ff;
-            background: rgba(0, 240, 255, 0.04);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
+            background: rgba(0, 240, 255, 0.03);
+            box-shadow: 0 15px 35px rgba(0, 240, 255, 0.25);
         }
 
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.85rem;
-            align-items: center;
-        }
-
-        .skill-name {
-            font-weight: 700;
-            color: #f3f4f6;
-            font-size: 1.05rem;
-        }
-
-        .skill-status {
-            font-size: 0.75rem;
-            font-weight: 700;
+        .skill-badge-title {
+            font-size: 0.85rem;
             color: #ff007f;
-            background: rgba(255, 0, 127, 0.15);
-            padding: 0.2rem 0.6rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 0, 127, 0.3);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
 
-        .skill-bar {
-            height: 7px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 999px;
-            position: relative;
-            overflow: hidden;
+        .skill-card h3 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
         }
 
-        .skill-progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
+        .skill-card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-link {
+            font-size: 0.9rem;
+            color: #00f0ff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .skill-link:hover {
+            color: #ff007f;
+            text-decoration: underline;
+        }
+
+        /* GFG & Coding Stats Panel */
+        .stats-panel {
+            background: rgba(13, 21, 39, 0.6);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 20px;
+            padding: 2.2rem;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            font-weight: 800;
             background: linear-gradient(to right, #00f0ff, #ff007f);
-            border-radius: 999px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-item p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Matrix Cards Engine Configs */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .card {
             background: rgba(13, 21, 39, 0.4);
-            border: 1px solid rgba(255, 0, 127, 0.15);
+            border: 1px solid rgba(0, 240, 255, 0.2);
             border-radius: 20px;
             padding: 2.2rem;
             backdrop-filter: blur(12px);
@@ -368,144 +382,47 @@
 
         .card:hover {
             transform: translateY(-6px);
-            border-color: #ff007f;
-            background: rgba(255, 0, 127, 0.03);
-            box-shadow: 0 15px 35px rgba(255, 0, 127, 0.2);
+            border-color: #00f0ff;
+            background: rgba(0, 240, 255, 0.02);
+            box-shadow: 0 15px 35px rgba(0, 240, 255, 0.25);
         }
 
-        .card-icon {
-            font-size: 2rem;
-            color: #00f0ff;
-            margin-bottom: 1.4rem;
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        .cert-img-box {
+            width: 100%;
+            height: 190px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            background: #111827;
+        }
+
+        .cert-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        
+        .card:hover .cert-img-box img {
+            transform: scale(1.05);
         }
 
         .card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #ffffff;
-            margin-bottom: 0.85rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
         }
 
-        .card p {
-            color: #9ca3af;
-            font-size: 0.98rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .card-links {
-            display: flex;
-            gap: 1.2rem;
-        }
-
-        .card-link {
-            font-size: 0.95rem;
-            font-weight: 700;
+        .cert-org {
+            font-size: 0.9rem;
             color: #00f0ff;
-            text-decoration: none;
-            transition: color 0.2s;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        .card-link:hover {
-            color: #ff007f;
-            text-decoration: underline;
-        }
-
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Contact Systems UI */
-        .contact-form-container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: rgba(13, 21, 39, 0.5);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            padding: 3rem;
-            border-radius: 24px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .social-row {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            color: #f3f4f6;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            padding: 0.65rem 1.4rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            border-radius: 12px;
-        }
-
-        .social-link:hover {
-            color: #00f0ff;
-            border-color: #00f0ff;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
-        }
-
-        .form-group {
-            margin-bottom: 1.6rem;
-        }
-
-        .form-control {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            padding: 1rem 1.2rem;
-            color: white;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: #00f0ff;
-            background: rgba(255, 255, 255, 0.04);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 130px;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: linear-gradient(to right, #00f0ff, #7c3aed);
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.6);
-        }
-
-        /* Cyber Neon Floating WhatsApp Trigger Engine */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 35px;
@@ -541,7 +458,6 @@
             margin-top: 5rem;
         }
 
-        /* Screen Breakpoints Matrix */
         @media (max-width: 968px) {
             body { cursor: auto; }
             #custom-cursor, #custom-cursor-dot { display: none; }
@@ -553,15 +469,17 @@
             .hero-content h1 { font-size: 2.8rem; }
             .btn-group { justify-content: center; }
             nav ul { display: none; }
-            .image-wrapper { width: 280px; height: 360px; }
+            .image-wrapper { width: 280px; height: 280px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Cyber Space Cursor Elements -->
     <div id="custom-cursor"></div>
     <div id="custom-cursor-dot"></div>
 
+    <!-- Header / Navbar -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Rajarshdev<span>.dev</span></a>
@@ -569,194 +487,148 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#credentials">Credentials</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- WhatsApp Direct Link -->
     <a href="https://wa.me/919453110907" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Chat via WhatsApp">
         💬
     </a>
 
+    <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="hero-row">
             <div class="hero-content">
                 <span class="badge">Future Software Developer</span>
                 <h1>Hi, I'm <br><span>Rajarshdev Pandey</span></h1>
-                <p>B.Tech Computer Science Engineering Student entering my 2nd Year (Graduation 2029). Specializing in algorithmic architectures, high-performance clean data modeling, and rich frontend application layers.</p>
+                <p>B.Tech Computer Science Engineering Student entering my 2nd Year (Graduation 2029). Specializing in data structures, high-performance clean algorithmic modeling, and modern web applications.</p>
                 <div class="btn-group">
-                    <a href="https://github.com/Rajarshdevpandey" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Profile</a>
-                    <a href="https://wa.me/919453110907" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">WhatsApp Chat</a>
+                    <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn Profile</a>
+                    <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GFG Profile</a>
                 </div>
             </div>
             <div class="hero-image-container">
                 <div class="image-wrapper">
-                    <img src="photo.jpg" alt="Rajarshdev Pandey" onerror="this.src='photo.jpeg'; this.onerror=function(){this.src='1000099385.webp';}">
+                    <!-- Profile Photo Configuration -->
+                    <img src="photo.jpg" alt="Rajarshdev Pandey">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About Me & Coding Stats Panel -->
     <section>
         <h2 class="section-title">About <span>Me</span></h2>
-        <div class="about-grid">
-            <div class="skill-card">
-                <h3 style="color:#fff; margin-bottom:1rem; text-shadow: 0 0 10px rgba(0,240,255,0.4);">⚡ Tech Passion</h3>
-                <p style="color:#9ca3af; font-size:0.98rem;">Passionate about infrastructure automation workflows, deterministic computer architectures, and high-performance cross-platform software engineering frameworks.</p>
+        <div class="stats-panel">
+            <div class="stat-item">
+                <h4 class="counter">180+</h4>
+                <p>GFG Problems Solved</p>
             </div>
-            <div class="skill-card">
-                <h3 style="color:#fff; margin-bottom:1rem; text-shadow: 0 0 10px rgba(255,0,127,0.4);">💡 Engineering Mindset</h3>
-                <p style="color:#9ca3af; font-size:0.98rem;">Dedicated to learning systems architecture parameters, parsing optimized software logic loops, and refactoring functional algorithms cleanly.</p>
+            <div class="stat-item">
+                <h4 class="counter">60</h4>
+                <p>GFG POTD Streak Days</p>
+            </div>
+            <div class="stat-item">
+                <h4 class="counter">50+</h4>
+                <p>LeetCode Solved</p>
             </div>
         </div>
     </section>
 
+    <!-- Core Skills & Microsoft / IBM Badges Area -->
     <section id="skills">
-        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <h2 class="section-title">Technical <span>Skills & Verified Paths</span></h2>
         <div class="skills-grid">
+            
+            <!-- Microsoft AI Badge Card -->
             <div class="skill-card">
-                <div class="skill-info"><span class="skill-name">C Language</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                <div>
+                    <div class="skill-badge-title">Microsoft Verified</div>
+                    <h3>Artificial Intelligence (AI)</h3>
+                    <p>Advanced study paths covering core cloud AI implementations, algorithmic automation systems, and modern intelligence frameworks.</p>
+                </div>
+                <a href="https://learn.microsoft.com/api/achievements/share/en-us/RajarshdevPandey-0068/WMPRCLRN?sharingId=2129119490155DFE" target="_blank" rel="noopener noreferrer" class="skill-link">View Achievement Link →</a>
             </div>
+
+            <!-- IBM Credly Card -->
             <div class="skill-card">
-                <div class="skill-info"><span class="skill-name">Java</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                <div>
+                    <div class="skill-badge-title">IBM Verified via Credly</div>
+                    <h3>Data Science Foundations</h3>
+                    <p>Official structural framework credentials from IBM for handling secure data processing systems and high-scale structural modeling.</p>
+                </div>
+                <a href="https://www.credly.com/badges/2e55aa42-70fe-4995-8c2f-ed9ef6eade86/public_url" target="_blank" rel="noopener noreferrer" class="skill-link">Verify IBM Badge on Credly →</a>
             </div>
+
+            <!-- MS Learn Profile Portal -->
             <div class="skill-card">
-                <div class="skill-info"><span class="skill-name">Python</span><span class="skill-status">Learning</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 60%;"></div></div>
+                <div>
+                    <div class="skill-badge-title">Learning Engine</div>
+                    <h3>Microsoft Learn Profile</h3>
+                    <p>Centralized hub detailing my technical modules, sandbox achievements, and continuous updates in cloud compute engineering.</p>
+                </div>
+                <a href="https://learn.microsoft.com/en-us/users/rajarshdevpandey-0068/" target="_blank" rel="noopener noreferrer" class="skill-link">Explore Full Microsoft Profile →</a>
             </div>
-            <div class="skill-card">
-                <div class="skill-info"><span class="skill-name">Frontend (HTML, CSS, JS)</span></div>
-                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
-            </div>
+
         </div>
     </section>
 
-    <section id="achievements">
-        <h2 class="section-title">Key <span>Achievements</span></h2>
+    <!-- Credentials Section with Single Fixed Names -->
+    <section id="credentials">
+        <h2 class="section-title">Industrial <span>Credentials</span></h2>
         <div class="cards-grid">
+            
+            <!-- 1. Thiranex -->
             <div class="card">
+                <div class="cert-img-box">
+                    <img src="thiranex_certificate.jpg" alt="Thiranex Certificate">
+                </div>
                 <div>
-                    <div class="card-icon">🏆</div>
-                    <h3>NPCI 60 Days POTD Challenge</h3>
-                    <p>Successfully completed 60 consecutive days of non-stop analytical problem-solving routines, fine-tuning rigorous data-handling processes.</p>
+                    <div class="cert-org">Thiranex</div>
+                    <h3>Full Stack Developer Intern</h3>
                 </div>
             </div>
-            <div class="card">
-                <div>
-                    <div class="card-icon">🤝</div>
-                    <h3>GeeksforGeeks Volunteer</h3>
-                    <p>Contributed actively within localized tech stack mentorship modules, reviewing documentation challenges and helping resolve logical errors for student peers.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="card-icon">💼</div>
-                    <h3>Thiranex Internship</h3>
-                    <p>Acquired industry workflow dynamics within a developer sprint setup, aiding framework component modeling and UI router testing structures.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="projects">
-        <h2 class="section-title">Featured <span>Projects</span></h2>
-        <div class="cards-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
+            <!-- 2. GFG Volunteer -->
             <div class="card">
-                <div>
-                    <div class="card-icon">📝</div>
-                    <h3>AI Notes Generator</h3>
-                    <p>A production-ready documentation platform built with functional contextual synthesis parsing, designed to automate complex study tracks for engineering batches.</p>
+                <div class="cert-img-box">
+                    <img src="gfg_volunteer_certificate.jpg" alt="GFG Volunteer Certificate">
                 </div>
-                <div class="card-links">
-                    <a href="https://rajarshdevpandey.github.io/notes/" target="_blank" rel="noopener noreferrer" class="card-link">Live Project Link</a>
-                    <a href="https://github.com/Rajarshdevpandey" target="_blank" rel="noopener noreferrer" class="card-link">GitHub Code</a>
+                <div>
+                    <div class="cert-org">GeeksforGeeks Community</div>
+                    <h3>Core Technical Volunteer</h3>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="education">
-        <h2 class="section-title">My <span>Education</span></h2>
-        <div class="edu-grid">
+            <!-- 3. GFG 60 Days -->
             <div class="card">
+                <div class="cert-img-box">
+                    <img src="gfg_potd_certificate.jpg" alt="GFG 60 Days Certificate">
+                </div>
                 <div>
-                    <span style="color:#00f0ff; font-size:0.85rem; font-weight:700;">2025 - 2029</span>
-                    <h3 style="margin-top:0.5rem;">B.Tech in Computer Science Engineering</h3>
-                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">Entering 2nd Year (Engineering Core Blocks)</p>
+                    <div class="cert-org">GeeksforGeeks Core</div>
+                    <h3>60 Days POTD Challenge</h3>
                 </div>
             </div>
-            <div class="card">
-                <div>
-                    <span style="color:#00f0ff; font-size:0.85rem; font-weight:700;">Completed</span>
-                    <h3 style="margin-top:0.5rem;">Higher Secondary Education (CBSE)</h3>
-                    <p style="margin-bottom:0.5rem; font-size:0.95rem; color:#9ca3af;">PCM Stream (Physics, Chemistry, Mathematics Specialization)</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact">
-        <h2 class="section-title">Contact <span>Me</span></h2>
-        <div class="contact-form-container">
-            <div class="social-row">
-                <a href="https://www.linkedin.com/in/rajarshdev-pandey-5809b8327" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
-                <a href="https://www.geeksforgeeks.org/profile/prajar1vbq/" target="_blank" rel="noopener noreferrer" class="social-link">GeeksforGeeks</a>
-                <a href="https://www.instagram.com/dev__pandey_07?igsh=MWFxa2Zyemx0MnNkbQ==" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
-            </div>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="_replyto" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Rajarshdev Pandey | Future Software Developer</p>
+        <p>&copy; 2026 Rajarshdev Pandey</p>
     </footer>
 
     <script>
         const cursor = document.getElementById('custom-cursor');
         const dot = document.getElementById('custom-cursor-dot');
-
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-            
             dot.style.left = e.clientX + 'px';
             dot.style.top = e.clientY + 'px';
-        });
-
-        // Expanding custom ring controller mapping
-        const magneticTargets = document.querySelectorAll('a, button, .card, .skill-card, .form-control');
-        magneticTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => {
-                cursor.style.width = '48px';
-                cursor.style.height = '48px';
-                cursor.style.borderColor = '#ff007f';
-                cursor.style.backgroundColor = 'rgba(255, 0, 127, 0.05)';
-                cursor.style.boxShadow = '0 0 20px rgba(255, 0, 127, 0.5)';
-            });
-            target.addEventListener('mouseleave', () => {
-                cursor.style.width = '22px';
-                cursor.style.height = '22px';
-                cursor.style.borderColor = '#00f0ff';
-                cursor.style.backgroundColor = 'transparent';
-                cursor.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.5)';
-            });
         });
     </script>
 </body>
